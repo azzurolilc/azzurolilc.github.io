@@ -14,7 +14,7 @@ Here I'm gonna focus on the implementation of --
 ###Java 7:
 
 ```java
-public static int[] Rs7(int size, Iterable<Integer> data){
+    public static int[] Rs7(int size, Iterable<Integer> data){
         int count = 0;
         int [] arr = new int[size];
 
@@ -47,7 +47,11 @@ public static int[] Rs7(int size, Iterable<Integer> data){
     }
 ```
 
-###Thinking about big data and distributed computing:
+###Thinking about big data and distributed computing, sampling with mapping only function:
+
+```java
+
+```
 
 ![](../resources/images/rs.png "Distributed Reservoir Sampling")
 
