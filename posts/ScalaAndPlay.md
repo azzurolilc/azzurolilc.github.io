@@ -2,7 +2,7 @@
 
 Based on [Bittiger-Scala-Play-Framework](https://drive.google.com/file/d/0B1ocrybUr2qWN0dURk9BcjZuQlU/view)
 
-@astray1988[Code,ppt](https://github.com/astray1988/scala-talk-bittiger)
+@astray1988  [CodeDemo&ppt](https://github.com/astray1988/scala-talk-bittiger)
 
 ##Scala
 
