@@ -1,34 +1,58 @@
 #Scala, Play Framework and Akka
 
+Based on [Bittiger-Scala-Play-Framework](https://drive.google.com/file/d/0B1ocrybUr2qWN0dURk9BcjZuQlU/view)
+
+@astray1988[Code,ppt](https://github.com/astray1988/scala-talk-bittiger)
+
 ##Scala
+
+Static Language, strongly typed, runs on JVM, OOP combine Functional
 
 ####Variables and Values
 **variables:**
 
 ```
-var a = 1
+// mutable, strongly typed
+var x: Int = 1
 ```
 
 **values:**
 
 ```
-val b = 1
+// immutable
+val y: Int = 1
 ```
 
 
 ####Functions
 
 **Lambda Function**
+```
+def y(x:Int) = x+1
+def y = (x:Int) => x+1
 
+// anonymous function
+(x:Int) => x+1
+```
 
 
 **Closure**
+```
+var x = 1
+def fn(y:Int) = x+y
 
+fn(1)
+//Int = 2
+
+x = 3
+fn(1)
+//Int = 4
+```
 
 
 **Partial Function**
 
-Must use case
+Must use case, error check @compile 
 
 NullPointException handling: 
 ```
@@ -61,7 +85,7 @@ convert to scala:
 val scalaList = list.asScala.toList 
 ```
 
-**Traits and Classes**
+####Traits and Classes
 
 
 Trait is similar to Interfaces in Java.
@@ -215,60 +239,83 @@ object ImplicitDemo extends App {
   println(giveMeADuck(new Chicken))
 }
 ```
-More features
+#####More features
 
 
 
 ###Pitfalls
 
-**Heavy in concepts and keywords** Implicits, for comprehensions, lazy, case class, partially applied functions, :/, ~>, :: etc.
+1. Heavy in concepts and keywords Implicits, for comprehensions, lazy, case class, partially applied functions, :/, ~>, :: etc.
 
-**Steep learning curve**
+2. Steep learning curve
 
-**Coding style: functional v.s. Non-functional**
+3. Coding style: functional v.s. Non-functional
 
-**Syntactic Diabetes** same function, too many ways of expression
+4. Syntactic Diabetes same function, too many ways of expression
 
-Too many ways to write the same thing 
-Short v.s. readable
-Advanced features getting in the way
+	- Too many ways to write the same thing 
 
-Solution: Style Guides
+	- Short v.s. readable
 
+	- Advanced features getting in the way
 
+	- Solution: Style Guides
 
-**Backward Compatibility Issues**
-
-
-
-
-
-
-
+5. Backward Compatibility Issues
 
 
 
 
 ##Play Framework
------
-companies uses play framework: twitter, linkedin, coursera
+
+Full-stack framework, scalable, asynchronous, fast, runs on JVM
+
+Build System Console: SBT | JVM => Akka/db => Play Framework => JBoss/Nginx
+
+Companies uses play framework: twitter, linkedin, coursera etc...
 
 ###Akka
 
-
+Concurrent, Distributed, Fault-Tolerant, Background Processing
 
 ###Play
+Support both Scala and Java, support JSON, JVM libaries, Angular etc.
 
+Template Engine, Http request/response peocessing, Integrated Cache, RESTful Routing Engine, Asset Compilation, Internationalization, Testing Tools
 
+Structure: MVC
 
-JVM => Akka => Play => JBoss/Nginx
+> === Result Helper in Play ===
+>
+> Ok //200
+>
+> NotFound (h1:pageNotFound) //404
+>
+> BadRequest(view,html.form(formWithErrors)) //400
+>
+> InternalServerError('Oops') //500
+>
+> Redirect('targetURL') //302
 
-MVC
+[Play Framework Site](https://www.playframework.com)
 
-Activator: tutorials
+[Play Package Manager: Activator](http://www.lightbend.com)
+```
+// In terminal
+> activator new <app name>
 
-play swagger interactive api
-Scala community Scala Center
+// Unit Test
+> sbt test
 
+```
+[Play Demo @DY](https://github.com/astray1988/scala-talk-bittiger/tree/master/play-demo)
+
+Play Swagger : Interactive API
+
+Community:  scalacenter, MOOC courses etc.
+
+Conference: Scala Days, akka, play, spark
+
+[Scala Reference](https://github.com/astray1988/scala-reference-CN)
 
 
