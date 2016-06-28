@@ -129,7 +129,10 @@ val car1 = Car('BMW')
 val car2 = new Car('BMW')
 
 ```
+Trait Linearization
+```
 
+```
 
 ###Advanced Features
 
